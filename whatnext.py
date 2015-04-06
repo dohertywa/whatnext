@@ -82,5 +82,5 @@ def display_queue(username,mc):
 		pattern_link = generate_pattern_link(project['short_pattern_name'])
 	return template('myqueue.tpl', friends=friends,date_added=date_added,project=project,username=username,page_count=int(project_list['paginator']['page_count']),number_projects=project_count, pattern_link=pattern_link)
 
-app.debug(True)
+debug(True)
 app.run(host='localhost', port=9090, server='bjoern', reloader=True)
