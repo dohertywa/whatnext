@@ -14,7 +14,7 @@
 			<p class="navbar-text"><span class="badge">{{number_projects}}</span></p>
 		</div>
 	</nav>
-	<div class="center-block">
+	<div class="col-md-6 col-md-offset-3">
 		<div class="lead">
 			<h1><a href="{{pattern_link}}" target="_blank">{{project['short_pattern_name']}}</a></h1>
 			<p>by {{project['pattern_author_name']}}</p>
@@ -24,11 +24,13 @@
 			<img src="{{project['best_photo']['small_url']}}" />
 		</div>
 	</div>
+<div class="col-md-6 col-md-offset-3">
 <p>My Friends</p>
 <ul class="list-inline">
 % for friend in friends['friendships']:
 <li><a href="/myqueue/{{friend['friend_username']}}">{{friend['friend_username']}}</a></li>
 % end
 </ul>
+</div>
 </body>
 </html>
