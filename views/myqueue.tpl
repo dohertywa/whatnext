@@ -12,7 +12,7 @@
 				<a href="#" class="navbar-brand">Project Queue of {{username}}</a>
 			</div>
 			<p class="navbar-text"><span class="badge">{{number_projects}}</span></p>
-			<a href="/myqueue/{{username}}" class="btn btn-success" role="button">Pick Another Project</a>
+			<a href="/myqueue/{{username}}" class="btn navbar-btn btn-success" role="button">Pick Another Project</a>
 		</div>
 	</nav>
 	<div class="col-md-6 col-md-offset-3 text-center">
