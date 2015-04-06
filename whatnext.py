@@ -9,7 +9,7 @@ app = bottle.Bottle()
 plugin = bottle.ext.memcache.MemcachePlugin(servers=['localhost:11211'])
 app.install(plugin)
 
-keyword = 'mc'
+#keyword = 'mc'
 
 RAV_KEY = "Ru_HwXZ_kgbFgq7t4Trh3f6xblkrSQz3pVDjC9Ig"
 APP_KEY = "FED0135B342E318AE033"
