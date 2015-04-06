@@ -29,7 +29,7 @@ def get_queue_projects(username):
 def get_project_count(queue):
 	return int(queue['paginator']['results'])
 
-def get_random_project(count)
+def get_random_project(count):
 	plist = range(0,count)
 	random.shuffle(plist)
 	return random.choice(plist)
