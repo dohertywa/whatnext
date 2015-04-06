@@ -14,7 +14,7 @@
 			<p class="navbar-text"><span class="badge">{{number_projects}}</span></p>
 		</div>
 	</nav>
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-6 col-md-offset-3 text-center">
 		<div class="lead">
 			<h1><a href="{{pattern_link}}" target="_blank">{{project['short_pattern_name']}}</a></h1>
 			<p>by {{project['pattern_author_name']}}</p>
