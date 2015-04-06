@@ -15,7 +15,7 @@
 			<a href="/myqueue/{{username}}" class="btn navbar-btn btn-success" role="button">Pick Another Project</a>
 		</div>
 	</nav>
-	% if {{number_projcts}} == 0:
+	% if {{number_projects}} == 0:
 	<div class="col-md-6 col-md-offset-3 text-center">
 		<div class="lead">
 			<h1><a href="{{pattern_link}}" target="_blank">{{project['short_pattern_name']}}</a></h1>
