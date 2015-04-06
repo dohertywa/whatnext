@@ -15,6 +15,7 @@
 			<a href="/myqueue/{{username}}" class="btn navbar-btn btn-success" role="button">Pick Another Project</a>
 		</div>
 	</nav>
+	% if {{number_projects}} is not 0:
 	<div class="col-md-6 col-md-offset-3 text-center">
 		<div class="lead">
 			<h1><a href="{{pattern_link}}" target="_blank">{{project['short_pattern_name']}}</a></h1>
@@ -25,6 +26,7 @@
 			<img src="{{project['best_photo']['small_url']}}" />
 		</div>
 	</div>
+	% end
 <div class="col-md-6 col-md-offset-3">
 <p>My Friends</p>
 <ul class="list-inline">

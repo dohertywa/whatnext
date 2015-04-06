@@ -27,7 +27,7 @@ def get_queue_projects(username):
 	return api_call('/people/%s/queue/list.json?page_size=1000' % username)
 
 def get_project_count(queue):
-	return int(queue['paginator']['results'])
+	return int(queue['paginator']['results']) or 0
 
 def get_random_project(count):
 	plist = range(0,count)
@@ -73,12 +73,13 @@ def display_queue(username,mc):
 		mc.set('friends_' + username, get_friends(username))
 		friends = mc.get('friends_' + username)
 	project_count = get_project_count(project_list)
-	queued_projects = project_list['queued_projects']
-	pchoice = get_random_project(project_count)
-	project = queued_projects[pchoice]
-	date_added = arrow.get(project['created_at'],'YYYY/MM/DD').format('YYYY-MM-DD')
-	date_added = calculate_time_in_queue(date_added)
-	pattern_link = generate_pattern_link(project['short_pattern_name'])
+	if project_count is not 0:
+		queued_projects = project_list['queued_projects']
+		pchoice = get_random_project(project_count)
+		project = queued_projects[pchoice]
+		date_added = arrow.get(project['created_at'],'YYYY/MM/DD').format('YYYY-MM-DD')
+		date_added = calculate_time_in_queue(date_added)
+		pattern_link = generate_pattern_link(project['short_pattern_name'])
 	return template('myqueue.tpl', friends=friends,date_added=date_added,project=project,username=username,page_count=int(project_list['paginator']['page_count']),number_projects=project_count, pattern_link=pattern_link)
 
 
