@@ -26,6 +26,14 @@ def get_friends(username):
 def get_queue_projects(username):
 	return api_call('/people/%s/queue/list.json?page_size=1000' % username)
 
+def get_project_count(queue):
+	return int(queue['paginator']['results'])
+
+def get_random_project(count)
+	plist = range(0,count)
+	random.shuffle(plist)
+	return random.choice(plist)
+
 def calculate_time_in_queue(date_added):
 	from datetime import datetime
 	today = datetime.today().date()
@@ -64,11 +72,9 @@ def display_queue(username,mc):
 	if not friends:
 		mc.set('friends_' + username, get_friends(username))
 		friends = mc.get('friends_' + username)
-	project_count = int(project_list['paginator']['results'])
+	project_count = get_project_count(project_list)
 	queued_projects = project_list['queued_projects']
-	parray = range(0,project_count)
-	random.shuffle(parray)
-	pchoice = random.choice(parray)
+	pchoice = get_random_project(project_count)
 	project = queued_projects[pchoice]
 	date_added = arrow.get(project['created_at'],'YYYY/MM/DD').format('YYYY-MM-DD')
 	date_added = calculate_time_in_queue(date_added)
